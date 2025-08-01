@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE PENGUIN KINGDOM</title>
+    <link rel="icon" href="Plogo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tiny5&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style type="text/css">
+*{
+    box-sizing: border-box;
+    padding: 0px;
+
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: "Tiny5";
+    color: whitesmoke;
+    overflow-x: hidden;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+
+body{
+    background: linear-gradient(to top, rgba(0, 162, 255, 1.0), rgba(107, 239, 254, 1.0));
+    margin: 0px;
+
+}
+
+.banner{
+    width: 100%;
+    height: 53vw;
+    background-image: url(banner.png);
+    filter: drop-shadow(4px -4px 4px rgba(0, 162, 255));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 85%;
+    z-index: 1001;
+
+}
+
+/* Base Navbar */
+.navbar {
+    width: 92%; /* Ensure it spans the whole width */
+    margin: auto;
+    padding: 15px 30px; /* Added horizontal padding for a better look */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(135, 206, 235, 0.6); /* Semi-transparent skyblue */
+    position: sticky;
+    top: 25px;
+    z-index: 1000;
+    box-shadow: 0px 4px 20px rgba(0, 162, 255, 0.7), 0px 0px 30px rgba(255, 255, 255, 0.3); /* Soft glow with increased shadow */
+    border-radius: 15px;
+    background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.6), rgba(255, 255, 255, 0.3)); /* Gradient for frosty effect */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    outline: 2px solid rgba(255, 255, 255, 0.4); /* Blue outline with semi-transparency */
+    margin-bottom: 0px;
+}
+
+
+/* Navbar Hover Effect */
+.navbar:hover {
+    background-color: rgba(135, 206, 235, 0.7); /* Slightly increase opacity on hover */
+    box-shadow: 0px 4px 25px rgba(0, 162, 255, 0.8), 0px 0px 45px rgba(255, 255, 255, 0.4); /* Enhanced glow on hover */
+    transform: scale(1.0009); /* Subtle zoom effect */
+}
+
+/* Logo Styling */
+.logo {
+    width: 8vw;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 1s, filter 1s; /* Smooth transition */
+    filter: blur(0.5px) drop-shadow(0px 0px 3.5px rgba(0, 0, 0, 0.4)); /* Subtle blur and shadow */
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+    transform: scale(1.05); /* Larger zoom effect */
+    filter: blur(0px) drop-shadow(0px 0px 4.5px rgba(0, 0, 0, 0.6)); /* Glow effect on hover */
+}
+
+/* Navbar List (Menu items) */
+.navbar ul {
+    list-style: none;
+    display: flex; /* Flex display for horizontal menu items */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px; /* Less spacing between items */
+    position: relative;
+}
+
+/* Navbar Links */
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5vw;
+    filter: drop-shadow(1px 1px #301c5d);
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Navbar Link Hover Effects */
+.navbar ul li a:hover {
+    color: #01a2ff; /* Change to blue on hover */
+    filter: drop-shadow(1px 1px #004973);
+    text-shadow: 0px 0px 8px rgba(0, 162, 255, 0.8); /* Glow effect on hover */
+}
+
+/* Add a glowing underline effect on hover */
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #01a2ff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.5s ease; /* Smooth transition */
+}
+
+/* Hover underline animation */
+.navbar ul li:hover::after {
+    width: 100%; /* Expand the underline on hover */
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px; /* Starts slightly above the viewport */
+    pointer-events: none; /* Ensures snowflakes don’t interfere with other content */
+    z-index: -999;
+    font-size: 24px;
+    user-select: none;
+    opacity: 1; /* Always visible */
+    animation: snow 10s linear infinite;
+}
+
+/* Snowflake animation */
+@keyframes snow {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(50px) translateY(100vh); /* Move the snowflakes to the bottom */
+    }
+}
+
+.content {
+    text-align: center;
+    color: white;
+
+}
+
+.content h1{
+    font-size: 90px;
+    filter: drop-shadow(2px 2px #301c5d);
+    animation: bounce 2s ease-in-out infinite;
+    margin: 70px;
+    transition: 0.5s;
+
+}
+
+.content h1:hover{
+    font-size: 95px;
+    margin: 65px;
+    transition: 0.5s;
+
+}
+
+.content h4{
+    font-size: 60px;
+    font-family: Tiny5;
+    color: whitesmoke;
+    margin: -30px;
+    padding: 0px;
+    filter: drop-shadow(2px 2px #301c5d);
+    animation: bounce 2s ease-in-out infinite;
+    transition: 1s;
+
+}
+
+.content h4:hover{
+    font-size: 65px;
+    margin: -30px;
+    transition: 1s;
+
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    25% {
+        transform: rotate(-5deg) translateX(-5px); /* Slightly rotate and move left */
+    }
+    50% {
+        transform: rotate(0deg) translateX(0); /* Back to original position */
+    }
+    75% {
+        transform: rotate(5deg) translateX(5px); /* Slightly rotate and move right */
+    }
+    100% {
+        transform: rotate(0deg) translateX(0); /* Back to original position */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+    <div class="navbar">
+       <a href="home.html"><img src="Plogo.png" class="logo"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="crtr.html">CHARACTERS</a></li>
+    <li><a href="feed.html">FEEDBACK</a></li>
+<li><a target="_blank" href="https://scratch.mit.edu/projects/1048795340/">🎮</a></li>
+  </ul>
+    </div>
+    <div class="content">
+    <h1>THE PENGUIN<br>KINGDOM</h1>
+    <h4>PLAY</h4>
+    </div>
+    </div>
+</body>
+<script>
+// Function to generate snowflakes continuously
+function generateSnowflakes() {
+    const numberOfSnowflakes = 5;  // Number of snowflakes to generate at once
+    const snowflakeContainer = document.body;
+
+    setInterval(() => {  // Continuously generate snowflakes
+        for (let i = 0; i < numberOfSnowflakes; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';  // Snowflake character
+
+            // Randomize the snowflake's horizontal position
+            snowflake.style.left = `${Math.random() * 100}vw`;  // Random position within the viewport
+
+            // Randomize animation duration (falling speed)
+            snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;  // Between 5s and 10s
+
+            // Randomize snowflake size
+            const size = Math.random() * 15 + 5;  // Snowflake size between 5px and 20px
+            snowflake.style.fontSize = `${size}px`;
+
+            // Randomize opacity for more natural look
+            snowflake.style.opacity = Math.random() * 0.5 + 0.5;  // Random opacity between 0.5 and 1
+
+            // Append snowflake to body
+            snowflakeContainer.appendChild(snowflake);
+
+            // Remove snowflake after it has finished falling (to prevent clutter)
+            setTimeout(() => {
+                snowflake.remove();
+            }, parseFloat(snowflake.style.animationDuration) * 1000);  // Matches the animation duration
+        }
+    }, 300);  // Generate new snowflakes every 300ms
+}
+
+// Start generating snowflakes on page load
+generateSnowflakes();
+    </script>
+</html>
