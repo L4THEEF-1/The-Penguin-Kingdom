@@ -1,0 +1,368 @@
+*{
+	box-sizing: border-box;
+	padding: 0px;
+
+}
+
+html{
+	scroll-behavior: smooth;
+	font-family: "Tiny5";
+	color: whitesmoke;
+	overflow-x: hidden;
+
+}
+
+
+body{
+	background: linear-gradient(to top, rgba(0, 162, 255, 1.0), rgba(107, 239, 254, 1.0));
+	margin: 0px;
+
+}
+
+section{
+	background: rgba(255, 255, 255, 0.2);  /* Semi-transparent background */
+	backdrop-filter: blur(5px);
+	border-radius: 20px;
+	width: 380px;
+	padding: 20px;
+
+}
+
+section img{
+	width: 250px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 5px rgba(0, 162, 255, 0.8), 0px 0px 45px rgba(255, 255, 255, 0.4); /* Enhanced glow on hover */
+  	outline: 1px solid rgba(0, 162, 255);
+
+}
+
+video{
+	width: 800px;
+	border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 162, 255, 0.8), 0px 0px 45px rgba(255, 255, 255, 0.4); /* Enhanced glow on hover */
+  outline: 1px solid rgba(0, 162, 255);
+
+
+}
+
+hr{
+	margin: -3px;
+	background-color: rgba(0, 162, 255, 0.8);
+	padding: 2.5px;
+	filter: blur(3px);
+	width: 1200px;
+	box-shadow: 0 0 9px rgba(0, 162, 255, 0.8);
+
+}
+
+a{
+	text-decoration: none;
+
+}
+
+
+/* Base Navbar */
+.navbar {
+    width: 92%; /* Ensure it spans the whole width */
+    margin: auto;
+    padding: 15px 30px; /* Added horizontal padding for a better look */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(135, 206, 235, 0.6); /* Semi-transparent skyblue */
+    position: sticky;
+    top: 25px;
+    z-index: 1000;
+    box-shadow: 0px 4px 20px rgba(0, 162, 255, 0.7), 0px 0px 30px rgba(255, 255, 255, 0.3); /* Soft glow with increased shadow */
+    border-radius: 15px;
+    background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.6), rgba(255, 255, 255, 0.3)); /* Gradient for frosty effect */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    outline: 2px solid rgba(255, 255, 255, 0.4); /* Blue outline with semi-transparency */
+
+}
+
+/* Navbar Hover Effect */
+.navbar:hover {
+    background-color: rgba(135, 206, 235, 0.7); /* Slightly increase opacity on hover */
+    box-shadow: 0px 4px 25px rgba(0, 162, 255, 0.8), 0px 0px 45px rgba(255, 255, 255, 0.4); /* Enhanced glow on hover */
+    transform: scale(1.0009); /* Subtle zoom effect */
+}
+
+/* Logo Styling */
+.logo {
+    width: 8vw;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 1s, filter 1s; /* Smooth transition */
+    filter: blur(0.5px) drop-shadow(0px 0px 3.5px rgba(0, 0, 0, 0.4)); /* Subtle blur and shadow */
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+    transform: scale(1.05); /* Larger zoom effect */
+    filter: blur(0px) drop-shadow(0px 0px 4.5px rgba(0, 0, 0, 0.6)); /* Glow effect on hover */
+}
+
+/* Navbar List (Menu items) */
+.navbar ul {
+    list-style: none;
+    display: flex; /* Flex display for horizontal menu items */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px; /* Less spacing between items */
+    position: relative;
+}
+
+/* Navbar Links */
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5vw;
+    filter: drop-shadow(1px 1px #301c5d);
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Navbar Link Hover Effects */
+.navbar ul li a:hover {
+    color: #01a2ff; /* Change to blue on hover */
+	filter: drop-shadow(1px 1px #004973);
+    text-shadow: 0px 0px 8px rgba(0, 162, 255, 0.8); /* Glow effect on hover */
+}
+
+/* Add a glowing underline effect on hover */
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #01a2ff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.5s ease; /* Smooth transition */
+}
+
+/* Hover underline animation */
+.navbar ul li:hover::after {
+    width: 100%; /* Expand the underline on hover */
+}
+
+
+.content {
+    text-align: center;
+    color: white;
+
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px; /* Starts slightly above the viewport */
+    bottom: 0;
+    pointer-events: none; /* Ensures snowflakes don’t interfere with other content */
+    z-index: 999;
+    font-size: 24px;
+    user-select: none;
+    opacity: 0;
+    animation: snow 10s linear infinite;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Snowflake animation */
+@keyframes snow {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(50px) translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.content h1{
+	font-size: 90px;
+	filter: drop-shadow(2px 2px #301c5d);
+    animation: bounce 2s ease-in-out infinite;
+    margin: 70px;
+    transition: 0.5s;
+
+}
+
+.content h1:hover{
+	font-size: 95px;
+	margin: 65px;
+	transition: 0.5s;
+
+}
+
+.content h4{
+	font-size: 60px;
+	font-family: Tiny5;
+	color: whitesmoke;
+	margin: -30px;
+	padding: 0px;
+	filter: drop-shadow(2px 2px #301c5d);
+    animation: bounce 2s ease-in-out infinite;
+    transition: 1s;
+
+}
+
+.content h4:hover{
+	font-size: 65px;
+	margin: -30px;
+	transition: 1s;
+
+}
+
+.content img{
+	background-repeat: repeat;
+	background-size: contain;
+	height: 100px;
+	margin-top: 89px;
+	z-index: 1000;
+
+}
+
+/* Container for all items */
+.container {
+  display: flex;
+  flex-direction: column;  /* Stack the items vertically */
+  gap: 20px;  /* Add space between each item */
+  align-items: center;
+}
+
+/* Each item (image + text) */
+.item {
+  display: flex;
+  align-items: center;  /* Vertically center image and text */
+  gap: 70px;  /* Space between image and text */
+  margin: 40px;
+}
+
+/* Styling the image */
+.image {
+  width: 400px;  /* Set image width */
+  height: 400px;  /* Set image height */
+  object-fit: cover;  /* Ensure the image covers the area */
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px rgba(0, 162, 255, 0.8), 0px 0px 45px rgba(255, 255, 255, 0.4); /* Enhanced glow on hover */
+  outline: 1px solid rgba(0, 162, 255);
+  margin: 10px;
+}
+
+/* Styling the text container */
+.text {
+  flex: 1;  /* Allow the text div to take up remaining space */
+  filter: drop-shadow(1px 1px 1px gray);
+}
+
+/* Optional: Add some styles for the title and text */
+.text h2 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.text p {
+  color: whitesmoke;
+  font-family: Poppins;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    25% {
+        transform: rotate(-5deg) translateX(-5px); /* Slightly rotate and move left */
+    }
+    50% {
+        transform: rotate(0deg) translateX(0); /* Back to original position */
+    }
+    75% {
+        transform: rotate(5deg) translateX(5px); /* Slightly rotate and move right */
+    }
+    100% {
+        transform: rotate(0deg) translateX(0); /* Back to original position */
+    }
+}
+
+.contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+  text-transform: uppercase;
+}
+
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.contact-description {
+  color: rgb(107 114 128);
+}
+
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.form-input::placeholder,
+.form-textarea:focus-visible {
+  color: #6b7280;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: #01a2ff;
+  color: #fff;
+  padding: 13px 5px;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  font-family: Poppins;
+  font-weight: 5000;
+}
